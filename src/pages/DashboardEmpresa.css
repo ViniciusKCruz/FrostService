@@ -1,0 +1,113 @@
+.dashboard-container {
+  padding: 40px;
+  background-color: #eef5ff; /* Fundo azul bem claro */
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  color: #3b4a6e;
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  flex-grow: 1; /* Faz o título ocupar o espaço */
+  text-align: center; /* Centraliza o título */
+}
+
+.dashboard-back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5a6b92;
+  position: absolute; /* Para não afetar a centralização do título */
+}
+
+.tecnicos-grid {
+  display: grid;
+  /* Cria colunas responsivas: preenche com colunas de no mínimo 280px */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px; /* Espaçamento entre os cards */
+}
+
+.tecnico-card {
+  background-color: #eef5ff;
+  border-radius: 20px;
+  padding: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #7b8cb5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  /* Efeito Neumórfico: duas sombras, uma clara e uma escura */
+  box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.tecnico-card:hover {
+  box-shadow: 4px 4px 10px #d1d9e6, -4px -4px 10px #ffffff;
+}
+
+.tecnico-card-nome {
+  flex-grow: 1;
+}
+
+.add-card {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.excluir-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff6b6b; /* Vermelho para o botão de excluir */
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  padding: 5px;
+}
+
+.excluir-btn:hover {
+  opacity: 1;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.especializacao-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: white;
+}
+
+/* Cores diferentes para cada especialização */
+.tecnico-card.refrigeração .especializacao-tag {
+  background-color: #4a90e2; /* Azul */
+}
+
+.tecnico-card.climatização .especializacao-tag {
+  background-color: #f5a623; /* Laranja */
+}

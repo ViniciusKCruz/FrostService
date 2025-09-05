@@ -1,0 +1,118 @@
+.perfil-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.perfil-modal {
+  background: #f4f7ff;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.perfil-container {
+  text-align: center;
+}
+
+.perfil-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0d2a57;
+  margin-bottom: 20px;
+}
+
+.perfil-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 15px;
+}
+
+.perfil-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.perfil-email {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.perfil-info-section h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #e0e7ff;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: left;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.info-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.info-card-text h5 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.info-card-text p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.info-card-icon {
+  color: #a0a0a0;
+}
+
+.escolher-tecnico-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.escolher-tecnico-btn:hover {
+  background-color: #357abd;
+}
