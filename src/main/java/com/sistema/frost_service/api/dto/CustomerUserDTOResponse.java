@@ -18,16 +18,16 @@ public class CustomerUserDTOResponse {
         return first_Name;
     }
 
+    public void setFirst_Name(String first_Name) {
+        this.first_Name = first_Name;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void setFirst_Name(String first_Name) {
-        this.first_Name = first_Name;
     }
 
     public String getLast_Name() {

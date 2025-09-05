@@ -1,14 +1,12 @@
 package com.sistema.frost_service.api.mapper;
 
-import com.sistema.frost_service.api.dto.BusinessUserDTOResponse;
 import com.sistema.frost_service.api.dto.CustomerUserDTORequest;
 import com.sistema.frost_service.api.dto.CustomerUserDTOResponse;
 import com.sistema.frost_service.domain.model.CustomerUser;
 
 public class CustomerUserMapper {
 
-
-    public static CustomerUserDTOResponse toDto(CustomerUser customerUser) {
+    public CustomerUserDTOResponse toDto(CustomerUser customerUser) {
         if (customerUser == null) {
             return null;
         }
@@ -25,7 +23,7 @@ public class CustomerUserMapper {
     }
 
 
-    public static CustomerUser toEntity(CustomerUserDTORequest customerUserDTORequest) {
+    public CustomerUser toEntity(CustomerUserDTORequest customerUserDTORequest) {
         if (customerUserDTORequest == null) {
             return null;
         }

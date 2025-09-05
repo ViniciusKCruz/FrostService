@@ -1,25 +1,27 @@
 package com.sistema.frost_service.application.formatter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CNPJFormatterTest {
 
     public static void main(String[] args) {
 
-        String cnpj1 = "00623904000173";
-        String cnpj2 = "1237589595893489356879879";
-        String cnpj3 = "dsa123";
 
-        System.out.println("CNPJ sem formato: " + cnpj1);
-        System.out.println("CNPJ sem formato: " + cnpj2);
-        System.out.println("CNPJ sem formato: " + cnpj3);
+        List<String> unformatedCnpjList = new ArrayList<>();
+        unformatedCnpjList.add("00623904000173");
+        unformatedCnpjList.add("1237589595893489356879879");
+        unformatedCnpjList.add("dsa123");
 
-        String cnpjFormatado = CNPJFormatter.toValidCNPJ(cnpj1);
-        System.out.println("CNPJ formatado: " + cnpjFormatado);
+        for (String cnpj : unformatedCnpjList) {
+            String formatedCnpj = CNPJFormatter.toValidCNPJ(cnpj);
+            if (formatedCnpj != null) {
+                System.out.println("CNPJ formatado: " + formatedCnpj);
 
-        cnpjFormatado = CNPJFormatter.toValidCNPJ(cnpj2);
-        System.out.println("CNPJ formatado: " + cnpjFormatado);
-
-        cnpjFormatado = CNPJFormatter.toValidCNPJ(cnpj3);
-        System.out.println("CNPJ: "+cnpjFormatado);
+            } else {
+                System.out.println("CNPJ sem estar formatado: " + cnpj);
+            }
+        }
 
     }
 

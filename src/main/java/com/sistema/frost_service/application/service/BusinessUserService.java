@@ -15,7 +15,7 @@ public class BusinessUserService {
     private final BusinessUserMapper businessUserMapper;
 
 
-    public BusinessUserService( BusinessUserRepository  businessUserRepository, BusinessUserMapper businessUserMapper) {
+    public BusinessUserService(BusinessUserRepository businessUserRepository, BusinessUserMapper businessUserMapper) {
         this.businessUserRepository = businessUserRepository;
         this.businessUserMapper = businessUserMapper;
     }
@@ -26,13 +26,13 @@ public class BusinessUserService {
         return businessUserMapper.toDto(savedBusinessUser);
     }
 
-    public List<BusinessUserDTOResponse> findAllBusinessUsers(){
+    public List<BusinessUserDTOResponse> findAllBusinessUsers() {
         List<BusinessUser> businessUsers = businessUserRepository.findAll();
         List<BusinessUserDTOResponse> businessUserDTOResponses = new ArrayList<>();
         for (BusinessUser businessUser : businessUsers) {
             businessUserDTOResponses.add(businessUserMapper.toDto(businessUser));
         }
-       return businessUserDTOResponses;
+        return businessUserDTOResponses;
     }
 
 }

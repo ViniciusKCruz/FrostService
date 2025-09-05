@@ -59,15 +59,15 @@ public class CustomerUserDTORequest {
         return cpf;
     }
 
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public GENDER getGender() {
         return gender;
     }
 
     public void setGender(GENDER gender) {
         this.gender = gender;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 }

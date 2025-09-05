@@ -1,7 +1,8 @@
 package com.sistema.frost_service.api.dto;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 public class BusinessUserDTORequest {
 

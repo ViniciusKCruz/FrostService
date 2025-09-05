@@ -14,12 +14,12 @@ public class CPFFormatterTest {
         unformatedCpfList.add("dsa123");
 
         for (String cpf : unformatedCpfList) {
-            System.out.println("CPF sem estar formatado: " + cpf);
-        }
-
-        for (String cpf : unformatedCpfList) {
             String formatedCpf = CPFFormatter.toValidCPF(cpf);
-            System.out.println("CNPJ formatado: " + formatedCpf);
+            if (formatedCpf != null) {
+                System.out.println("CPF formatado: " + formatedCpf);
+            } else {
+                System.out.println("CPF sem estar formatado: " + cpf);
+            }
         }
 
     }

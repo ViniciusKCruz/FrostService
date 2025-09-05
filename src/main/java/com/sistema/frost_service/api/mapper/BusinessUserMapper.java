@@ -6,7 +6,7 @@ import com.sistema.frost_service.domain.model.BusinessUser;
 
 public class BusinessUserMapper {
 
-    public static BusinessUserDTOResponse toDto(BusinessUser businessUser) {
+    public BusinessUserDTOResponse toDto(BusinessUser businessUser) {
         if (businessUser == null) {
             return null;
         }
@@ -21,7 +21,7 @@ public class BusinessUserMapper {
         return businessUserDTOResponse;
     }
 
-    public static BusinessUser toEntity(BusinessUserDTORequest businessUserDTORequest) {
+    public BusinessUser toEntity(BusinessUserDTORequest businessUserDTORequest) {
         if (businessUserDTORequest == null) {
             return null;
         }
