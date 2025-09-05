@@ -1,0 +1,114 @@
+.login-logo {
+
+  max-width: 400px;  
+  height: auto; 
+  margin-bottom: 2rem; /* Ajuste o espaço abaixo da logo, se necessário */
+}
+
+.login-container .login-logo {
+  width: 350px !important; /* Aumente este valor conforme necessário */
+  max-width: 80% !important; /* Garante que não quebre em telas pequenas */
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Container principal que centraliza tudo na tela */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa 100% da altura da tela */
+  background-color: #f4f7ff; /* Fundo azul bem claro, como na imagem */
+}
+
+.login-tecnico-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f7ff;
+  font-family: 'Inter', sans-serif;
+}
+
+.login-tecnico-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Estes estilos abaixo são genéricos e idênticos aos do LoginCliente.css.
+  No futuro, você poderia movê-los para um arquivo CSS compartilhado 
+  para evitar repetição de código. 
+*/
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 350px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #718ef3;
+}
+
+.submit-button {
+  background-color: #718ef3;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(113, 142, 243, 0.4);
+}
+
+.back-link {
+  margin-top: 2rem;
+  color: #555;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #718ef3;
+}
+
+.login-logo {
+  max-width: 180px;
+  margin-bottom: 2rem;
+}

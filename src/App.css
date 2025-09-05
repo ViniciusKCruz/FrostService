@@ -5,14 +5,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Container principal que centraliza tudo na tela */
-.login-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Ocupa 100% da altura da tela */
-  background-color: #f4f7ff; /* Fundo azul bem claro, como na imagem */
+.login-container .login-logo,
+.login-cliente-container .login-logo,
+.login-tecnico-container .login-logo {
+  width: 280px !important;   /* << AJUSTE ESTE VALOR para o tamanho que desejar */
+  max-width: 70% !important; /* Segurança para telas muito pequenas */
+  height: auto;              /* Mantém a proporção da imagem */
+  margin-bottom: 2rem;     /* Espaçamento abaixo da logo */
 }
 
 /* Estilo do título "LOGIN" */
