@@ -29,16 +29,16 @@ public class BusinessUserService {
     }
 
     public BusinessUserDTOResponse addBusinessUser(BusinessUserDTORequest businessUserDTORequest) {
-        BusinessUser businessUser = businessUserMapper.toEntity(businessUserDTORequest);
+        BusinessUser businessUser = BusinessUserMapper.toEntity(businessUserDTORequest);
         BusinessUser savedBusinessUser = businessUserRepository.save(businessUser);
-        return businessUserMapper.toDto(savedBusinessUser);
+        return BusinessUserMapper.toDto(savedBusinessUser);
     }
 
     public List<BusinessUserDTOResponse> findAllBusinessUsers() {
         List<BusinessUser> businessUsers = businessUserRepository.findAll();
         List<BusinessUserDTOResponse> businessUserDTOResponses = new ArrayList<>();
         for (BusinessUser businessUser : businessUsers) {
-            businessUserDTOResponses.add(businessUserMapper.toDto(businessUser));
+            businessUserDTOResponses.add(BusinessUserMapper.toDto(businessUser));
         }
         return businessUserDTOResponses;
     }
@@ -64,7 +64,7 @@ public class BusinessUserService {
         }*/
 
         BusinessUser updatedBusinessUser = businessUserRepository.save(existingBusinessUser);
-        return businessUserMapper.toDto(updatedBusinessUser);
+        return BusinessUserMapper.toDto(updatedBusinessUser);
     }
 
     public void deleteBusinessUser(Long id) {

@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface BusinessUserRepository extends JpaRepository<BusinessUser, Long> {
-    //Optional<BusinessUser> findByCNPJ(String cnpj);
-    //boolean existsByCnpj(String cnpj);
+    Optional<BusinessUser> findByCNPJ(String cnpj);
+    boolean existsByCnpj(String cnpj);
 }

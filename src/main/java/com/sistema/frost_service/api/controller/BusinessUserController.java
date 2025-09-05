@@ -4,6 +4,7 @@ package com.sistema.frost_service.api.controller;
 import com.sistema.frost_service.api.dto.BusinessUserDTORequest;
 import com.sistema.frost_service.api.dto.BusinessUserDTOResponse;
 import com.sistema.frost_service.application.service.BusinessUserService;
+import com.sistema.frost_service.exceptions.BusinessNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +33,7 @@ public class BusinessUserController {
         List<BusinessUserDTOResponse> businessUserDTOResponses = businessUserService.findAllBusinessUsers();
         return ResponseEntity.ok(businessUserDTOResponses);
     }
-/*
+
     @GetMapping("/{id}")
     public ResponseEntity<BusinessUserDTOResponse> findBusinessUserById(@PathVariable Long id) {
         BusinessUserDTOResponse dto = businessUserService.findBusinessUserById(id);
@@ -46,7 +47,7 @@ public class BusinessUserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBusinessUser(@PathVariable ("id") Long id) {
+    public ResponseEntity<Void> deleteBusinessUser(@PathVariable("id") Long id) {
         try {
             businessUserService.deleteBusinessUser(id);
             return ResponseEntity.ok().build();
@@ -54,5 +55,5 @@ public class BusinessUserController {
             return ResponseEntity.notFound().build();
         }
     }
-*/
+
 }
