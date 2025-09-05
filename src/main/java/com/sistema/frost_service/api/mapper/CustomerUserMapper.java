@@ -8,7 +8,7 @@ import com.sistema.frost_service.domain.model.CustomerUser;
 public class CustomerUserMapper {
 
 
-    public CustomerUserDTOResponse toDto(CustomerUser customerUser) {
+    public static CustomerUserDTOResponse toDto(CustomerUser customerUser) {
         if (customerUser == null) {
             return null;
         }
@@ -25,7 +25,7 @@ public class CustomerUserMapper {
     }
 
 
-    public CustomerUser toEntity(CustomerUserDTORequest customerUserDTORequest) {
+    public static CustomerUser toEntity(CustomerUserDTORequest customerUserDTORequest) {
         if (customerUserDTORequest == null) {
             return null;
         }
