@@ -1,2 +1,3 @@
+com\sistema\frost_service\application\formatter\CPFFormatterTest.class
 com\sistema\frost_service\FrostServiceApplicationTests.class
-com\sistema\frost_service\LombokTest.class
+com\sistema\frost_service\application\formatter\CNPJFormatterTest.class

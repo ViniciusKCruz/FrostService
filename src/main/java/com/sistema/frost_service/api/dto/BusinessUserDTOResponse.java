@@ -1,5 +1,7 @@
 package com.sistema.frost_service.api.dto;
 
+import com.sistema.frost_service.domain.enums.USERTYPE;
+
 public class BusinessUserDTOResponse {
 
     private String cnpj;
@@ -9,6 +11,16 @@ public class BusinessUserDTOResponse {
     private String tradeName;
 
     private String email;
+
+    private USERTYPE usertype;
+
+    public USERTYPE getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(USERTYPE usertype) {
+        this.usertype = usertype;
+    }
 
     public String getCnpj() {
         return cnpj;

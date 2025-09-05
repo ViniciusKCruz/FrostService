@@ -3,7 +3,6 @@ package com.sistema.frost_service.api.controller;
 import com.sistema.frost_service.api.dto.CustomerUserDTORequest;
 import com.sistema.frost_service.api.dto.CustomerUserDTOResponse;
 import com.sistema.frost_service.application.service.CustomerUserService;
-import com.sistema.frost_service.exceptions.CustomerNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,25 +32,4 @@ public class CustomerUserController {
         return ResponseEntity.ok(customers);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<CustomerUserDTOResponse> findCustomerUserById(@PathVariable Long id) {
-        CustomerUserDTOResponse customer = customerUserService.findCustomerUserById(id);
-        return ResponseEntity.ok(customer);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<CustomerUserDTOResponse> editCustomerUser(@PathVariable Long id, @RequestBody @Valid CustomerUserDTORequest request) {
-        CustomerUserDTOResponse updated = customerUserService.editUser(id, request);
-        return ResponseEntity.ok(updated);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCustomerUser(@PathVariable Long id) {
-        try {
-            customerUserService.deleteCustomerUser(id); //
-            return ResponseEntity.ok().build();
-        } catch (CustomerNotFoundException e) {
-            return ResponseEntity.notFound().build();
-        }
-    }
 }

@@ -11,11 +11,11 @@ public class CustomerUser extends User {
 
     @NotBlank(message = "First's name cannot be empty!")
     @Column(nullable = false, name = "firsts_name")
-    private String first_Name;
+    private String firstName;
 
     @NotBlank(message = "Last's name cannot be empty!")
     @Column(nullable = false, name = "lasts_name")
-    private String last_Name;
+    private String lastName;
 
     @Enumerated(EnumType.STRING)
     @NotNull(message = "Gender cannot be empty!")
@@ -25,10 +25,10 @@ public class CustomerUser extends User {
     @NotBlank(message = "CPF cannot be empty")
     private String cpf;
 
-    public CustomerUser(Long id, String email, String passwordHash, USERTYPE usertype, String first_Name, String last_Name, GENDER gender, String cpf) {
+    public CustomerUser(Long id, String email, String passwordHash, USERTYPE usertype, String firstName, String lastName, GENDER gender, String cpf) {
         super(id, email, passwordHash, usertype);
-        this.first_Name = first_Name;
-        this.last_Name = last_Name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.gender = gender;
         this.cpf = cpf;
     }
@@ -36,20 +36,20 @@ public class CustomerUser extends User {
     public CustomerUser() {
     }
 
-    public String getFirst_Name() {
-        return first_Name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_Name(String first_Name) {
-        this.first_Name = first_Name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_Name() {
-        return last_Name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_Name(String last_Name) {
-        this.last_Name = last_Name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public GENDER getGender() {

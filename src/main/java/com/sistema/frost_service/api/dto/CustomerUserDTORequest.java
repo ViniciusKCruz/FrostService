@@ -1,6 +1,7 @@
 package com.sistema.frost_service.api.dto;
 
 import com.sistema.frost_service.domain.enums.GENDER;
+import com.sistema.frost_service.domain.enums.USERTYPE;
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -17,11 +18,11 @@ public class CustomerUserDTORequest {
 
     @NotBlank(message = "First's name cannot be empty!")
     @Column(nullable = false, name = "firsts_name")
-    private String first_Name;
+    private String firstName;
 
     @NotBlank(message = "Last's name cannot be empty!")
     @Column(nullable = false, name = "lasts_name")
-    private String last_Name;
+    private String lastName;
 
     @Column(name = "cpf", nullable = false, unique = true)
     @NotBlank(message = "CPF cannot be empty")
@@ -31,6 +32,42 @@ public class CustomerUserDTORequest {
     @NotNull(message = "Gender cannot be empty!")
     private GENDER gender;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    @NotNull(message = "User type cannot be empty!")
+    private USERTYPE usertype;
+
+    @Column(nullable = false)
+    private String salt;
+
+    @NotBlank(message = "Password cannot be empty!")
+    @Column(nullable = false)
+    private String passwordHash;
+
+    public USERTYPE getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(USERTYPE usertype) {
+        this.usertype = usertype;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -39,20 +76,20 @@ public class CustomerUserDTORequest {
         this.email = email;
     }
 
-    public String getFirst_Name() {
-        return first_Name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_Name(String first_Name) {
-        this.first_Name = first_Name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_Name() {
-        return last_Name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_Name(String last_Name) {
-        this.last_Name = last_Name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getCpf() {

@@ -16,8 +16,8 @@ public class CustomerUserMapper {
         CustomerUserDTOResponse customerUserDTOResponse = new CustomerUserDTOResponse();
 
         customerUserDTOResponse.setEmail(customerUser.getEmail());
-        customerUserDTOResponse.setFirst_Name(customerUser.getFirst_Name());
-        customerUserDTOResponse.setLast_Name(customerUser.getLast_Name());
+        customerUserDTOResponse.setFirstName(customerUser.getFirstName());
+        customerUserDTOResponse.setLastName(customerUser.getLastName());
         customerUserDTOResponse.setGender(customerUser.getGender());
         customerUserDTOResponse.setCpf(customerUser.getCpf());
 
@@ -33,8 +33,8 @@ public class CustomerUserMapper {
         CustomerUser customerUser = new CustomerUser();
 
         customerUser.setEmail(customerUserDTORequest.getEmail());
-        customerUser.setFirst_Name(customerUserDTORequest.getFirst_Name());
-        customerUser.setLast_Name(customerUserDTORequest.getLast_Name());
+        customerUser.setFirstName(customerUserDTORequest.getFirstName());
+        customerUser.setLastName(customerUserDTORequest.getLastName());
         customerUser.setGender(customerUserDTORequest.getGender());
         customerUser.setCpf(customerUserDTORequest.getCpf());
 

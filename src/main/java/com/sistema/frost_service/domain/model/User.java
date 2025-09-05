@@ -10,7 +10,7 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 @Table(name = "users")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class User {
+public abstract class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,8 +67,16 @@ public class User {
         return passwordHash;
     }
 
-    public void setPasswordHash() {
+    public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 
     public USERTYPE getUsertype() {

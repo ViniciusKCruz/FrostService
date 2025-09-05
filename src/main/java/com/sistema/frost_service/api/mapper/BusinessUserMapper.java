@@ -16,6 +16,7 @@ public class BusinessUserMapper {
         BusinessUserDTOResponse businessUserDTOResponse = new BusinessUserDTOResponse();
 
         businessUserDTOResponse.setCnpj(businessUser.getCnpj());
+        businessUserDTOResponse.setUsertype(businessUser.getUsertype());
         businessUserDTOResponse.setLegalName(businessUser.getLegalName());
         businessUserDTOResponse.setTradeName(businessUser.getTradeName());
         businessUserDTOResponse.setEmail(businessUser.getEmail());
@@ -23,20 +24,22 @@ public class BusinessUserMapper {
         return businessUserDTOResponse;
     }
 
-    public  static BusinessUser toEntity(BusinessUserDTORequest businessUserDTORequest) {
+    public static BusinessUser toEntity(BusinessUserDTORequest businessUserDTORequest) {
         if (businessUserDTORequest == null) {
             return null;
         }
 
         BusinessUser businessUser = new BusinessUser();
-
+        businessUser.setUsertype(businessUserDTORequest.getUsertype());
         businessUser.setCnpj(businessUserDTORequest.getCnpj());
         businessUser.setLegalName(businessUserDTORequest.getLegalName());
         businessUser.setTradeName(businessUserDTORequest.getTradeName());
         businessUser.setEmail(businessUserDTORequest.getEmail());
+        businessUser.setPasswordHash(businessUserDTORequest.getPasswordHash());
+        businessUser.setSalt(businessUserDTORequest.getSalt());
 
         return businessUser;
-
     }
+
 
 }

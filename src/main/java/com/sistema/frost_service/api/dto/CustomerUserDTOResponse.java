@@ -1,25 +1,36 @@
 package com.sistema.frost_service.api.dto;
 
 import com.sistema.frost_service.domain.enums.GENDER;
+import com.sistema.frost_service.domain.enums.USERTYPE;
 
 public class CustomerUserDTOResponse {
 
     private String email;
 
-    private String first_Name;
+    private String firstName;
 
-    private String last_Name;
+    private String lastName;
 
     private GENDER gender;
 
     private String cpf;
 
-    public String getFirst_Name() {
-        return first_Name;
+    private USERTYPE usertype;
+
+    public USERTYPE getUsertype() {
+        return usertype;
     }
 
-    public void setFirst_Name(String first_Name) {
-        this.first_Name = first_Name;
+    public void setUsertype(USERTYPE usertype) {
+        this.usertype = usertype;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getEmail() {
@@ -30,12 +41,12 @@ public class CustomerUserDTOResponse {
         this.email = email;
     }
 
-    public String getLast_Name() {
-        return last_Name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_Name(String last_Name) {
-        this.last_Name = last_Name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public GENDER getGender() {
