@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-interface BusinessUserRepository extends JpaRepository<BusinessUser, Long> {
+public interface BusinessUserRepository extends JpaRepository<BusinessUser, Long> {
     Optional<BusinessUser> findByCNPJ(String cnpj);
 }

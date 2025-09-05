@@ -1,6 +1,7 @@
 package com.sistema.frost_service.api.mapper;
 
 import com.sistema.frost_service.api.dto.BusinessUserDTOResponse;
+import com.sistema.frost_service.api.dto.CustomerUserDTORequest;
 import com.sistema.frost_service.api.dto.CustomerUserDTOResponse;
 import com.sistema.frost_service.domain.model.CustomerUser;
 
@@ -24,18 +25,18 @@ public class CustomerUserMapper {
     }
 
 
-    public CustomerUser toEntity(CustomerUserDTOResponse customerUserDTOResponse) {
-        if (customerUserDTOResponse == null) {
+    public CustomerUser toEntity(CustomerUserDTORequest customerUserDTORequest) {
+        if (customerUserDTORequest == null) {
             return null;
         }
 
         CustomerUser customerUser = new CustomerUser();
 
-        customerUser.setEmail(customerUserDTOResponse.getEmail());
-        customerUser.setFirst_Name(customerUserDTOResponse.getFirst_Name());
-        customerUser.setLast_Name(customerUserDTOResponse.getLast_Name());
-        customerUser.setGender(customerUserDTOResponse.getGender());
-        customerUser.setCpf(customerUser.getCpf());
+        customerUser.setEmail(customerUserDTORequest.getEmail());
+        customerUser.setFirst_Name(customerUserDTORequest.getFirst_Name());
+        customerUser.setLast_Name(customerUserDTORequest.getLast_Name());
+        customerUser.setGender(customerUserDTORequest.getGender());
+        customerUser.setCpf(customerUserDTORequest.getCpf());
 
         return customerUser;
     }
