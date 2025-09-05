@@ -59,9 +59,9 @@ public class BusinessUserService {
 
         String formattedCnpj = cnpjFormatter.toFormatCNPJ(validCnpj);
 
-        if (businessUserRepository.existsByCnpj(validCnpj)) {
+       /* if (businessUserRepository.existsByCnpj(validCnpj)) {
             throw new IllegalArgumentException("CNPJ já existente!");
-        }
+        }*/
 
         BusinessUser updatedBusinessUser = businessUserRepository.save(existingBusinessUser);
         return businessUserMapper.toDto(updatedBusinessUser);

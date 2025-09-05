@@ -57,10 +57,10 @@ public class CustomerUserService {
 
         String formattedCpf = cpfFormatter.toFormatCPF(validCpf);
 
-        boolean cpfExists = customerUserRepository.existsByCpf(validCpf);
+        /*boolean cpfExists = customerUserRepository.existsByCpf(validCpf);
         if (cpfExists && !existingCustomerUser.getCpf().equals(validCpf)) {
             throw new IllegalArgumentException("CPF já cadastrado!");
-        }
+        }*/
 
         existingCustomerUser.setFirst_Name(request.getFirst_Name()); // <-- Verifique o nome correto do método no Model
         existingCustomerUser.setEmail(request.getEmail());

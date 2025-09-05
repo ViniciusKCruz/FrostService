@@ -1,0 +1,7 @@
+com\sistema\frost_service\domain\enums\GENDER.class
+com\sistema\frost_service\domain\User.class
+com\sistema\frost_service\domain\enums\USERTYPE.class
+com\sistema\frost_service\domain\BusinessUser.class
+com\sistema\frost_service\security\SecurityUtils.class
+com\sistema\frost_service\FrostServiceApplication.class
+com\sistema\frost_service\domain\CustomerUser.class

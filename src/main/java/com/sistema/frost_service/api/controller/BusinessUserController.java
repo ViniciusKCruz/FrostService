@@ -4,7 +4,6 @@ package com.sistema.frost_service.api.controller;
 import com.sistema.frost_service.api.dto.BusinessUserDTORequest;
 import com.sistema.frost_service.api.dto.BusinessUserDTOResponse;
 import com.sistema.frost_service.application.service.BusinessUserService;
-import com.sistema.frost_service.exceptions.BusinessNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/business-users")
 public class BusinessUserController {
-
 
     private final BusinessUserService businessUserService;
 
@@ -30,11 +28,11 @@ public class BusinessUserController {
     }
 
     @GetMapping
-    public ResponseEntity<List<BusinessUserDTOResponse>> findAllBusinessUser() {
+    public ResponseEntity<List<BusinessUserDTOResponse>> findAllBusinessUsers() {
         List<BusinessUserDTOResponse> businessUserDTOResponses = businessUserService.findAllBusinessUsers();
         return ResponseEntity.ok(businessUserDTOResponses);
     }
-
+/*
     @GetMapping("/{id}")
     public ResponseEntity<BusinessUserDTOResponse> findBusinessUserById(@PathVariable Long id) {
         BusinessUserDTOResponse dto = businessUserService.findBusinessUserById(id);
@@ -42,7 +40,7 @@ public class BusinessUserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<BusinessUserDTOResponse> editBusinessUser(@PathVariable("id") Long id, @RequestBody BusinessUserDTORequest businessUserDTORequest) {
+    public ResponseEntity<BusinessUserDTOResponse> editBusinessUser(@PathVariable("id") Long id, @RequestBody @Valid BusinessUserDTORequest businessUserDTORequest) {
         BusinessUserDTOResponse updated = businessUserService.editBusinessUser(id, businessUserDTORequest);
         return ResponseEntity.ok(updated);
     }
@@ -56,5 +54,5 @@ public class BusinessUserController {
             return ResponseEntity.notFound().build();
         }
     }
-
+*/
 }
