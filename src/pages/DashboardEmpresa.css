@@ -1,4 +1,4 @@
-/* Estilos Gerais e do Cabeçalho (do seu novo código) */
+/* Estilos Gerais e do Cabeçalho */
 .dashboard-container {
   padding: 40px;
   background-color: #eef5ff; /* Fundo azul bem claro */
@@ -11,15 +11,15 @@
   align-items: center;
   margin-bottom: 40px;
   color: #3b4a6e;
-  position: relative; /* Adicionado para o posicionamento do botão voltar */
+  position: relative;
 }
 
 .dashboard-header h1 {
   font-size: 1.8rem;
   font-weight: 600;
   margin: 0;
-  flex-grow: 1; /* Faz o título ocupar o espaço */
-  text-align: center; /* Centraliza o título */
+  flex-grow: 1;
+  text-align: center;
 }
 
 .dashboard-back-button {
@@ -32,11 +32,10 @@
   font-size: 1rem;
   font-weight: 500;
   color: #5a6b92;
-  position: absolute; /* Para não afetar a centralização do título */
+  position: absolute;
   left: 0;
 }
 
-/* Seção genérica para os cards (mantida e adaptada) */
 .dashboard-section {
   margin-bottom: 2rem;
 }
@@ -51,7 +50,7 @@
   margin-bottom: 1.5rem;
 }
 
-/* Estilos para a seção de Ferramentas (mantida e adaptada) */
+/* Estilos para a seção de Ferramentas */
 .ferramentas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -81,10 +80,9 @@
 
 .ferramenta-card svg {
   color: #4a90e2;
-  transition: color 0.3s ease;
 }
 
-/* Estilos para a seção de Técnicos (do seu novo código) */
+/* Estilos para a seção de Técnicos */
 .tecnicos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -160,4 +158,38 @@
 
 .excluir-btn:hover {
   opacity: 1;
+}
+
+
+/* =============================================================== */
+/* ============= REGRAS DE RESPONSIVIDADE PARA CELULAR ============= */
+/* =============================================================== */
+
+/* Estes estilos serão aplicados apenas em telas com largura máxima de 768px */
+@media (max-width: 768px) {
+  
+  .dashboard-container {
+    /* Diminui o espaçamento geral da página */
+    padding: 20px;
+  }
+
+  .dashboard-header {
+    /* Diminui o espaçamento abaixo do cabeçalho */
+    margin-bottom: 20px;
+  }
+
+  .dashboard-header h1 {
+    /* Diminui o tamanho do título */
+    font-size: 1.4rem;
+  }
+
+  .ferramentas-grid, .tecnicos-grid {
+    /* Diminui o espaçamento entre os cards */
+    gap: 15px;
+  }
+
+  .ferramenta-card, .tecnico-card {
+    /* Diminui o espaçamento interno dos cards */
+    padding: 20px;
+  }
 }

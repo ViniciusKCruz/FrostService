@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ManuaisPage.css';
 
+// A lista agora usa uma propriedade 'link' com a URL completa do Google Drive
 const manuais = [
-  { nome: 'Guia Rápido SHW Inverter 2023-2024', arquivo: 'Guia_Rapido_SHW_Inverter-2023-2024-2023-03_Rev01.pdf' },
-  { nome: 'Manual Serviços Refrigeradores DFN39/DFX39', arquivo: 'Manual_Servicos_Refrigeradores_DFN39_DFX39-TF39-TF39S_Rev04_Fevereiro2023.pdf' },
-  { nome: 'Sistemas de Climatização (Senai)', arquivo: 'Sistemas de Climatização (Senai).pdf' },
-  {nome: 'Apostila Câmara Fria', arquivo: 'Apostila Câmara Fria.pdf'},
-  {nome: 'Códigos de Erro - Midea', arquivo: 'midea-codigos-de-erro.pdf'}
+  { nome: 'Guia Rápido SHW Inverter 2023-2024', link: 'https://drive.google.com/file/d/1HGRpl8vf5l5DI6hL-tBPTmizcQLqnYJv/view' },
+  { nome: 'Manual Serviços Refrigeradores DFN39/DFX39', link: 'https://drive.google.com/file/d/1gPUjEApcjigfv58etsTIuU2Og_--SvIB/view' },
+  { nome: 'Sistemas de Climatização (Senai)', link: 'https://drive.google.com/file/d/11CpiHoOzCkvRp_-PViaKvOlLSv0LE8LZ/view' },
+  { nome: 'Apostila Câmara Fria', link: 'https://drive.google.com/file/d/1cG1QK2MOAnJIIWUnhdpukDby8VGXFo9U/view'},
+  { nome: 'Códigos de Erro - Midea', link: 'https://drive.google.com/file/d/1caEATNjJQgmY_8bJcfOD58-uNVvU2Bq-/view'}
 ];
 
 function ManuaisPage() {
@@ -15,7 +16,6 @@ function ManuaisPage() {
     <div className="container">
       <header className="header">
         <h1>Manuais Técnicos</h1>
-        {/* CORREÇÃO: Garantindo que o link aponta para a rota correta */}
         <Link to="/empresa/dashboard" className="back-link">Voltar ao Dashboard</Link>
       </header>
       <main className="content">
@@ -23,7 +23,8 @@ function ManuaisPage() {
         <ul className="manuals-list">
           {manuais.map((manual, index) => (
             <li key={index} className="manual-item">
-              <a href={`/${manual.arquivo}`} target="_blank" rel="noopener noreferrer">
+              {/* O href agora usa diretamente a propriedade 'link', sem a barra inicial */}
+              <a href={manual.link} target="_blank" rel="noopener noreferrer">
                 {manual.nome}
               </a>
             </li>
