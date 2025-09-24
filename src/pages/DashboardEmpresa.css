@@ -1,3 +1,4 @@
+/* Estilos Gerais e do Cabeçalho (do seu novo código) */
 .dashboard-container {
   padding: 40px;
   background-color: #eef5ff; /* Fundo azul bem claro */
@@ -10,6 +11,7 @@
   align-items: center;
   margin-bottom: 40px;
   color: #3b4a6e;
+  position: relative; /* Adicionado para o posicionamento do botão voltar */
 }
 
 .dashboard-header h1 {
@@ -31,38 +33,111 @@
   font-weight: 500;
   color: #5a6b92;
   position: absolute; /* Para não afetar a centralização do título */
+  left: 0;
 }
 
+/* Seção genérica para os cards (mantida e adaptada) */
+.dashboard-section {
+  margin-bottom: 2rem;
+}
+
+.dashboard-section h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3b4a6e;
+  border-bottom: 1px solid #d1d9e6;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos para a seção de Ferramentas (mantida e adaptada) */
+.ferramentas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.ferramenta-card {
+  background-color: #eef5ff;
+  border-radius: 20px;
+  padding: 30px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #7b8cb5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+  transition: box-shadow 0.3s ease;
+}
+
+.ferramenta-card:hover {
+  box-shadow: 4px 4px 10px #d1d9e6, -4px -4px 10px #ffffff;
+  color: #4a90e2;
+}
+
+.ferramenta-card svg {
+  color: #4a90e2;
+  transition: color 0.3s ease;
+}
+
+/* Estilos para a seção de Técnicos (do seu novo código) */
 .tecnicos-grid {
   display: grid;
-  /* Cria colunas responsivas: preenche com colunas de no mínimo 280px */
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px; /* Espaçamento entre os cards */
+  gap: 30px;
 }
 
 .tecnico-card {
   background-color: #eef5ff;
   border-radius: 20px;
   padding: 30px;
-  font-size: 1.1rem;
   font-weight: 600;
   color: #7b8cb5;
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  /* Efeito Neumórfico: duas sombras, uma clara e uma escura */
   box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
   transition: box-shadow 0.3s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .tecnico-card:hover {
   box-shadow: 4px 4px 10px #d1d9e6, -4px -4px 10px #ffffff;
 }
 
-.tecnico-card-nome {
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   flex-grow: 1;
+}
+
+.tecnico-card-nome {
+  font-size: 1.1rem;
+  flex-grow: 1;
+}
+
+.especializacao-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: white;
+}
+
+.tecnico-card.refrigeração .especializacao-tag {
+  background-color: #4a90e2; /* Azul */
+}
+
+.tecnico-card.climatização .especializacao-tag {
+  background-color: #f5a623; /* Laranja */
 }
 
 .add-card {
@@ -85,29 +160,4 @@
 
 .excluir-btn:hover {
   opacity: 1;
-}
-
-.card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  flex-grow: 1;
-}
-
-.especializacao-tag {
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 12px;
-  color: white;
-}
-
-/* Cores diferentes para cada especialização */
-.tecnico-card.refrigeração .especializacao-tag {
-  background-color: #4a90e2; /* Azul */
-}
-
-.tecnico-card.climatização .especializacao-tag {
-  background-color: #f5a623; /* Laranja */
 }
