@@ -1,25 +1,23 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../App.css';
-
+// O caminho do CSS foi corrigido para apontar para o App.css na pasta src
+import '../App.css'; 
 
 function HomePage() {
   const navigate = useNavigate();
 
-  // Função para lidar com o clique nos botões de login
   const handleLoginClick = (userType) => {
     if (userType === 'CLIENTE') {
       navigate('/login-cliente');
-    } else if (userType === 'TÉCNICO/EMPRESA') { // <-- MUDE O 'ELSE' PARA 'ELSE IF'
-      // Navega para a rota do login do técnico/empresa
-      navigate('/login-tecnico'); // <-- ADICIONE A NAVEGAÇÃO AQUI
+    } else if (userType === 'TÉCNICO/EMPRESA') {
+      // CORREÇÃO: A rota foi ajustada para a correta
+      navigate('/login-tecnico-empresa'); 
     }
   };
 
   return (
     <div className="login-container">
-      {/* O resto do seu componente JSX continua igual... */}
-    <img src="/images/logo-frost-service.png" alt="Logo Frost Service" className="login-logo" />
+      <img src="/images/logo-frost-service.png" alt="Logo Frost Service" className="login-logo" />
       <h1 className="login-title">LOGIN</h1>
       <div className="button-group">
         <button

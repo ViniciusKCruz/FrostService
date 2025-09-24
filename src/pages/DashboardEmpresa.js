@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { IoPersonAdd, IoTrash, IoArrowBack } from 'react-icons/io5';
-import AddTecnicoModal from '../components/AddTecnicoModal';
-import ViewTecnicoModal from '../components/ViewTecnicoModal';
+import { useNavigate, Link } from 'react-router-dom';
+import { IoPersonAdd, IoTrash, IoArrowBack, IoBook, IoVideocam } from 'react-icons/io5';
+// O import do modal foi reativado
+import AddTecnicoModal from '../components/AddTecnicoModal'; 
+// import ViewTecnicoModal from '../components/ViewTecnicoModal'; // Você pode reativar quando precisar
 import './DashboardEmpresa.css';
 
-// Dados iniciais com a especialização
 const tecnicosIniciais = [
   { id: 1, nome: 'Heitor de Oliveira', email: 'heitor@example.com', contato: '(62) 99999-1111', especializacao: 'Refrigeração' },
   { id: 2, nome: 'Emanuel Fernandes', email: 'emanuel@example.com', contato: '(62) 99999-2222', especializacao: 'Climatização' },
@@ -15,23 +15,19 @@ const tecnicosIniciais = [
 function DashboardEmpresa() {
   const [tecnicos, setTecnicos] = useState(tecnicosIniciais);
   const navigate = useNavigate();
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-  const [isViewModalOpen, setIsViewModalOpen] = useState(false);
-  const [selectedTecnico, setSelectedTecnico] = useState(null);
-
+  // Estado para controlar o modal de adicionar foi REATIVADO
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false); 
+  
+  // Funções para controlar o modal foram REATIVADAS
   const handleAdicionarTecnico = () => setIsAddModalOpen(true);
-
-  const handleViewTecnico = (tecnico) => {
-    setSelectedTecnico(tecnico);
-    setIsViewModalOpen(true);
-  };
 
   const handleSalvarTecnico = (novoTecnicoData) => {
     const novoTecnico = {
-      id: Date.now(),
+      id: Date.now(), // Gera um ID único
       ...novoTecnicoData,
     };
     setTecnicos([...tecnicos, novoTecnico]);
+    setIsAddModalOpen(false); // Fecha o modal após salvar
   };
 
   const handleExcluirTecnico = (idParaExcluir) => {
@@ -45,47 +41,57 @@ function DashboardEmpresa() {
           <IoArrowBack size={24} />
           Voltar
         </button>
-        <h1>Cadastro dos Técnicos</h1>
+        <h1>Painel da Empresa</h1>
+        <div/>
       </header>
+      
+      <section className="dashboard-section">
+        <h2>Ferramentas Rápidas</h2>
+        <div className="ferramentas-grid">
+          <Link to="/manuais" className="ferramenta-card">
+            <IoBook size={32} />
+            <span>Manuais</span>
+          </Link>
+          <Link to="/tutoriais" className="ferramenta-card">
+            <IoVideocam size={32} />
+            <span>Tutoriais</span>
+          </Link>
+        </div>
+      </section>
 
-      <div className="tecnicos-grid">
-        {tecnicos.map(tecnico => (
-          <div key={tecnico.id} className={`tecnico-card ${tecnico.especializacao.toLowerCase()}`} onClick={() => handleViewTecnico(tecnico)}>
-            <div className="card-content">
-              <span className="tecnico-card-nome">{tecnico.nome}</span>
-              <span className="especializacao-tag">{tecnico.especializacao}</span>
+      <section className="dashboard-section">
+        <h2>Cadastro dos Técnicos</h2>
+        <div className="tecnicos-grid">
+          {tecnicos.map(tecnico => (
+            <div key={tecnico.id} className={`tecnico-card ${tecnico.especializacao.toLowerCase()}`}>
+              <div className="card-content">
+                <span className="tecnico-card-nome">{tecnico.nome}</span>
+                <span className="especializacao-tag">{tecnico.especializacao}</span>
+              </div>
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleExcluirTecnico(tecnico.id);
+                }}
+                className="excluir-btn"
+              >
+                <IoTrash size={20} />
+              </button>
             </div>
-            <button 
-              onClick={(e) => {
-                e.stopPropagation();
-                handleExcluirTecnico(tecnico.id);
-              }}
-              className="excluir-btn"
-            >
-              <IoTrash size={20} />
-            </button>
-          </div>
-        ))}
+          ))}
+          {/* A função onClick foi REATIVADA no botão de adicionar */}
+          <button className="tecnico-card add-card" onClick={handleAdicionarTecnico}>
+            <IoPersonAdd size={24} />
+            <span>ADICIONE AQUI</span>
+          </button>
+        </div>
+      </section>
 
-        {/* =============================================================== */}
-        {/* O CARD DE ADICIONAR QUE ESTAVA FALTANDO FOI RECOLOCADO AQUI */}
-        {/* =============================================================== */}
-        <button className="tecnico-card add-card" onClick={handleAdicionarTecnico}>
-          <IoPersonAdd size={24} />
-          <span>ADICIONE AQUI</span>
-        </button>
-      </div>
-
+      {/* A renderização do modal foi REATIVADA */}
       <AddTecnicoModal
         isOpen={isAddModalOpen}
         onRequestClose={() => setIsAddModalOpen(false)}
         onSave={handleSalvarTecnico}
-      />
-
-      <ViewTecnicoModal
-        isOpen={isViewModalOpen}
-        onRequestClose={() => setIsViewModalOpen(false)}
-        tecnico={selectedTecnico}
       />
     </div>
   );
