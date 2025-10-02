@@ -8,23 +8,25 @@ const AddTecnicoModal = ({ isOpen, onRequestClose, onSave }) => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [contato, setContato] = useState('');
-  // 1. ADICIONAR ESTADO PARA A ESPECIALIZAÇÃO
-  const [especializacao, setEspecializacao] = useState('Refrigeração'); // Valor padrão
+  const [especializacao, setEspecializacao] = useState('Refrigeração');
+  // 1. NOVO ESTADO PARA O TIPO DE ATENDIMENTO
+  const [tipoServico, setTipoServico] = useState('Residencial'); 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!nome || !email || !contato || !especializacao) {
+    if (!nome || !email || !contato || !especializacao || !tipoServico) {
       alert('Por favor, preencha todos os campos.');
       return;
     }
-    // 2. ENVIAR A ESPECIALIZAÇÃO JUNTO COM OS OUTROS DADOS
-    onSave({ nome, email, contato, especializacao });
+    // 2. ENVIAR O NOVO DADO 'tipoServico' AO SALVAR
+    onSave({ nome, email, contato, especializacao, tipoServico });
 
     // Limpa o formulário
     setNome('');
     setEmail('');
     setContato('');
-    setEspecializacao('Refrigeração'); // Reseta para o padrão
+    setEspecializacao('Refrigeração');
+    setTipoServico('Residencial'); // Reseta para o padrão
     onRequestClose();
   };
 
@@ -51,9 +53,8 @@ const AddTecnicoModal = ({ isOpen, onRequestClose, onSave }) => {
             />
           </div>
 
-          {/* 3. ADICIONAR O CAMPO DE SELEÇÃO NO FORMULÁRIO */}
           <div className="form-group-modal">
-            <label htmlFor="especializacao">Especialização</label>
+            <label htmlFor="especializacao">Especialização Principal</label>
             <select
               id="especializacao"
               value={especializacao}
@@ -62,6 +63,20 @@ const AddTecnicoModal = ({ isOpen, onRequestClose, onSave }) => {
             >
               <option value="Refrigeração">Refrigeração</option>
               <option value="Climatização">Climatização</option>
+            </select>
+          </div>
+          
+          {/* 3. NOVO CAMPO DE SELEÇÃO NO FORMULÁRIO */}
+          <div className="form-group-modal">
+            <label htmlFor="tipoServico">Tipo de Atendimento</label>
+            <select
+              id="tipoServico"
+              value={tipoServico}
+              onChange={(e) => setTipoServico(e.target.value)}
+              required
+            >
+              <option value="Residencial">Residencial</option>
+              <option value="Industrial">Industrial</option>
             </select>
           </div>
 

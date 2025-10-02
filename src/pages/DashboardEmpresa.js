@@ -1,33 +1,30 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { IoPersonAdd, IoTrash, IoArrowBack, IoBook, IoVideocam } from 'react-icons/io5';
-// O import do modal foi reativado
-import AddTecnicoModal from '../components/AddTecnicoModal'; 
-// import ViewTecnicoModal from '../components/ViewTecnicoModal'; // Você pode reativar quando precisar
+import AddTecnicoModal from '../components/AddTecnicoModal';
 import './DashboardEmpresa.css';
 
+// 1. DADOS INICIAIS ATUALIZADOS COM 'tipoServico'
 const tecnicosIniciais = [
-  { id: 1, nome: 'Heitor de Oliveira', email: 'heitor@example.com', contato: '(62) 99999-1111', especializacao: 'Refrigeração' },
-  { id: 2, nome: 'Emanuel Fernandes', email: 'emanuel@example.com', contato: '(62) 99999-2222', especializacao: 'Climatização' },
-  { id: 3, nome: 'Vitor da Silva', email: 'vitor@example.com', contato: '(62) 99999-3333', especializacao: 'Refrigeração' },
+  { id: 1, nome: 'Heitor de Oliveira', email: 'heitor@example.com', contato: '(62) 99999-1111', especializacao: 'Refrigeração', tipoServico: 'Residencial' },
+  { id: 2, nome: 'Emanuel Fernandes', email: 'emanuel@example.com', contato: '(62) 99999-2222', especializacao: 'Climatização', tipoServico: 'Industrial' },
+  { id: 3, nome: 'Vitor da Silva', email: 'vitor@example.com', contato: '(62) 99999-3333', especializacao: 'Refrigeração', tipoServico: 'Industrial' },
 ];
 
 function DashboardEmpresa() {
   const [tecnicos, setTecnicos] = useState(tecnicosIniciais);
   const navigate = useNavigate();
-  // Estado para controlar o modal de adicionar foi REATIVADO
   const [isAddModalOpen, setIsAddModalOpen] = useState(false); 
   
-  // Funções para controlar o modal foram REATIVADAS
   const handleAdicionarTecnico = () => setIsAddModalOpen(true);
 
   const handleSalvarTecnico = (novoTecnicoData) => {
     const novoTecnico = {
-      id: Date.now(), // Gera um ID único
+      id: Date.now(),
       ...novoTecnicoData,
     };
     setTecnicos([...tecnicos, novoTecnico]);
-    setIsAddModalOpen(false); // Fecha o modal após salvar
+    setIsAddModalOpen(false);
   };
 
   const handleExcluirTecnico = (idParaExcluir) => {
@@ -66,7 +63,10 @@ function DashboardEmpresa() {
             <div key={tecnico.id} className={`tecnico-card ${tecnico.especializacao.toLowerCase()}`}>
               <div className="card-content">
                 <span className="tecnico-card-nome">{tecnico.nome}</span>
-                <span className="especializacao-tag">{tecnico.especializacao}</span>
+                {/* 2. EXIBIÇÃO ATUALIZADA PARA MOSTRAR A INFORMAÇÃO COMPLETA */}
+                <span className="especializacao-tag">
+                  {tecnico.especializacao} {tecnico.tipoServico}
+                </span>
               </div>
               <button 
                 onClick={(e) => {
@@ -79,7 +79,6 @@ function DashboardEmpresa() {
               </button>
             </div>
           ))}
-          {/* A função onClick foi REATIVADA no botão de adicionar */}
           <button className="tecnico-card add-card" onClick={handleAdicionarTecnico}>
             <IoPersonAdd size={24} />
             <span>ADICIONE AQUI</span>
@@ -87,7 +86,6 @@ function DashboardEmpresa() {
         </div>
       </section>
 
-      {/* A renderização do modal foi REATIVADA */}
       <AddTecnicoModal
         isOpen={isAddModalOpen}
         onRequestClose={() => setIsAddModalOpen(false)}

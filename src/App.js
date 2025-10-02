@@ -9,10 +9,8 @@ import SolicitarServico from './pages/SolicitarServico';
 import TecnicosRefrigeracao from './pages/TecnicosRefrigeracao';
 import TecnicosClimatizacao from './pages/TecnicosClimatizacao';
 import DashboardEmpresa from './pages/DashboardEmpresa';
-// Verifique se os imports estão corretos
 import ManuaisPage from './pages/ManuaisPage';
 import TutoriaisPage from './pages/TutoriaisPage';
-
 
 import './App.css';
 
