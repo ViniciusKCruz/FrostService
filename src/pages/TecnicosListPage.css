@@ -1,0 +1,141 @@
+/* Estilos Gerais */
+.tecnicos-page-container {
+  padding: 40px;
+  background-color: #f4f7ff;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ============================================= */
+/* CABEÇALHO CORRIGIDO E RESPONSIVO              */
+/* ============================================= */
+.tecnicos-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espaçamento entre o botão e o título */
+  margin-bottom: 30px;
+}
+
+.back-button {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  flex-shrink: 0; /* Impede que o botão encolha em telas pequenas */
+}
+
+.tecnicos-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #3b4a6e;
+  margin: 0;
+}
+/* Fim da correção do cabeçalho */
+
+
+/* Seções da Página */
+main section {
+  margin-bottom: 40px;
+}
+
+main h2 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Seção das Fotos dos Especialistas */
+.especialistas-fotos {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto; /* Permite rolar horizontalmente no telemóvel */
+  padding-bottom: 10px;
+}
+
+.especialista-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.especialista-perfil img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.especialista-perfil span {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Seção da Lista de Contatos */
+.lista-tecnicos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tecnico-card-contato {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.tecnico-initial {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.tecnico-contato-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tecnico-contato-nome {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.tecnico-contato-numero {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ============================================= */
+/* REGRAS DE RESPONSIVIDADE PARA TELEMÓVEIS      */
+/* ============================================= */
+@media (max-width: 768px) {
+  .tecnicos-page-container {
+    padding: 20px;
+  }
+
+  .tecnicos-title {
+    font-size: 1.3rem;
+  }
+}

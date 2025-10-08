@@ -9,16 +9,14 @@ const AddTecnicoModal = ({ isOpen, onRequestClose, onSave }) => {
   const [email, setEmail] = useState('');
   const [contato, setContato] = useState('');
   const [especializacao, setEspecializacao] = useState('Refrigeração');
-  // 1. NOVO ESTADO PARA O TIPO DE ATENDIMENTO
   const [tipoServico, setTipoServico] = useState('Residencial'); 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!nome || !email || !contato || !especializacao || !tipoServico) {
+    if (!nome || !email || !contato) {
       alert('Por favor, preencha todos os campos.');
       return;
     }
-    // 2. ENVIAR O NOVO DADO 'tipoServico' AO SALVAR
     onSave({ nome, email, contato, especializacao, tipoServico });
 
     // Limpa o formulário
@@ -26,7 +24,7 @@ const AddTecnicoModal = ({ isOpen, onRequestClose, onSave }) => {
     setEmail('');
     setContato('');
     setEspecializacao('Refrigeração');
-    setTipoServico('Residencial'); // Reseta para o padrão
+    setTipoServico('Residencial');
     onRequestClose();
   };
 
@@ -41,6 +39,8 @@ const AddTecnicoModal = ({ isOpen, onRequestClose, onSave }) => {
       <div className="add-tecnico-container">
         <h2 className="add-tecnico-title">Cadastrar Novo Funcionário</h2>
         <form onSubmit={handleSubmit} className="add-tecnico-form">
+          
+          {/* CAMPO NOME COMPLETO */}
           <div className="form-group-modal">
             <label htmlFor="nome">Nome Completo</label>
             <input
@@ -53,6 +53,7 @@ const AddTecnicoModal = ({ isOpen, onRequestClose, onSave }) => {
             />
           </div>
 
+          {/* CAMPO ESPECIALIZAÇÃO */}
           <div className="form-group-modal">
             <label htmlFor="especializacao">Especialização Principal</label>
             <select
@@ -66,7 +67,7 @@ const AddTecnicoModal = ({ isOpen, onRequestClose, onSave }) => {
             </select>
           </div>
           
-          {/* 3. NOVO CAMPO DE SELEÇÃO NO FORMULÁRIO */}
+          {/* CAMPO TIPO DE ATENDIMENTO */}
           <div className="form-group-modal">
             <label htmlFor="tipoServico">Tipo de Atendimento</label>
             <select
@@ -76,10 +77,12 @@ const AddTecnicoModal = ({ isOpen, onRequestClose, onSave }) => {
               required
             >
               <option value="Residencial">Residencial</option>
+              <option value="Comercial">Comercial</option>
               <option value="Industrial">Industrial</option>
             </select>
           </div>
 
+          {/* CAMPO EMAIL */}
           <div className="form-group-modal">
             <label htmlFor="email">Email</label>
             <input
@@ -91,6 +94,8 @@ const AddTecnicoModal = ({ isOpen, onRequestClose, onSave }) => {
               required
             />
           </div>
+          
+          {/* CAMPO CONTATO */}
           <div className="form-group-modal">
             <label htmlFor="contato">Contato (Telefone)</label>
             <input
@@ -102,6 +107,7 @@ const AddTecnicoModal = ({ isOpen, onRequestClose, onSave }) => {
               required
             />
           </div>
+          
           <div className="modal-actions">
             <button type="button" onClick={onRequestClose} className="cancel-btn">
               Cancelar

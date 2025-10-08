@@ -1,41 +1,68 @@
-.servico-container {
-  background-color: #f4f7ff; /* Cor de fundo de tela cheia */
+.servico-container-visual {
+  padding: 40px;
+  background-color: #f4f7ff;
   min-height: 100vh;
-  display: flex;
-  justify-content: center; /* Centraliza o wrapper horizontalmente */
-  padding: 20px 0; /* Espaçamento top/bottom */
-  box-sizing: border-box;
-  font-family: serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* NOVO WRAPPER PARA CENTRALIZAR O CONTEÚDO VISÍVEL */
-.servico-content-wrapper {
-  max-width: 500px; /* Largura máxima para o conteúdo centralizado */
-  width: 100%;
-  background-color: white; /* Ou um azul bem sutil se preferir para o bloco central */
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Sombra para destacar o bloco */
-  padding: 0 20px; /* Ajuste o padding interno para o conteúdo */
-  box-sizing: border-box;
-}
-
-.servico-header {
+.servico-header-visual {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 15px 0; /* Padding vertical, já que o horizontal está no wrapper */
-  border-bottom: 1px solid #e0e7ff; /* Linha mais suave */
+  justify-content: space-between;
   margin-bottom: 40px;
+  color: #3b4a6e;
 }
 
-.servico-title {
-  font-size: 1.5rem;
+.servico-title-visual {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.servico-main-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.servico-card-visual {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-card-visual:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.servico-card-visual img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-info {
+  padding: 20px;
+}
+
+.card-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
   color: #333;
-  font-weight: 500;
-  text-align: center;
 }
 
+.card-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Reutilizando estilos de outros botões */
 .header-icon-button {
   background: none;
   border: none;
@@ -43,59 +70,6 @@
   color: #333;
   padding: 5px;
 }
-
-/* Estilo para o botão de notificações (se quiser uma cor específica) */
 .notificacoes-button {
-    color: #007bff; /* Cor azul para o ícone de notificações */
-}
-
-/* O conteúdo principal da página */
-.servico-main-content { /* Renomeado para evitar conflito */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  gap: 30px;
-  padding-bottom: 20px; /* Padding para a parte inferior do wrapper */
-}
-
-.servico-item {
-  width: 100%;
-  max-width: 400px; /* Mantém a largura máxima dos botões */
-  text-align: center;
-}
-
-.servico-button {
-  width: 100%;
-  background-color: #d2e3fc; /* Azul claro do botão */
-  border: 1px solid #a8c8f7;
-  border-radius: 12px;
-  padding: 25px 20px;
-  font-size: 1.25rem;
-  font-family: serif;
-  color: #3e4a5c;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease-in-out;
-}
-
-.servico-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.servico-subtitle {
-  margin-top: 10px;
-  color: #555;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.separator {
-  width: 100%;
-  max-width: 400px;
-  height: 1px;
-  background-color: #ccc;
+  color: #007bff;
 }
