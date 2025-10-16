@@ -19,7 +19,7 @@ function LoginTecnicoEmpresa() {
       
       <form className="login-form" onSubmit={handleLogin}>
         <div className="form-group">
-          <label htmlFor="cnpj">CNPJ</label>
+          <label htmlFor="cnpj">CNPJ/CPF</label>
           <input type="text" id="cnpj" placeholder="Digite seu CNPJ/CPF" required />
         </div>
         <div className="form-group">
@@ -39,3 +39,4 @@ function LoginTecnicoEmpresa() {
 
 
 export default LoginTecnicoEmpresa;
+
