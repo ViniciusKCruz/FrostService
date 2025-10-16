@@ -21,8 +21,13 @@ function FormularioCadastroTecnicoEmpresa() {
         </div>
 
         <div className="input-group">
-          <label htmlFor="cnpj">CNPJ</label>
+          <label htmlFor="cnpj">CNPJ/CPF</label>
           <input type="text" id="cnpj" placeholder="DIGITE AQUI" />
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="CRT">CRT</label>
+          <input type="text" id="crt" placeholder="DIGITE AQUI" />
         </div>
 
         <div className="input-group">
@@ -49,5 +54,6 @@ function FormularioCadastroTecnicoEmpresa() {
     </div>
   );
 }
+
 
 export default FormularioCadastroTecnicoEmpresa;
