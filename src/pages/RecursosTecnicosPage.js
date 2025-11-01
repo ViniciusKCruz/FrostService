@@ -5,11 +5,11 @@ import { IoArrowBack } from 'react-icons/io5';
 import './RecursosTecnicosPage.css';
 
 const manuais = [
-    { nome: 'Guia Rápido SHW Inverter 2023-2024', link: 'COLOQUE_SEU_LINK_DO_GOOGLE_DRIVE_AQUI' },
-    { nome: 'Manual Serviços Refrigeradores DFN39/DFX39', link: 'COLOQUE_SEU_LINK_DO_GOOGLE_DRIVE_AQUI' },
+    { nome: 'Guia Rápido SHW Inverter 2023-2024', link: 'https://drive.google.com/file/d/1HGRpl8vf5l5DI6hL-tBPTmizcQLqnYJv/view?usp=drive_link' },
+    { nome: 'Manual Serviços Refrigeradores DFN39/DFX39', link: 'https://drive.google.com/file/d/1gPUjEApcjigfv58etsTIuU2Og_--SvIB/view?usp=drive_link' },
     { nome: 'Sistemas de Climatização (Senai)', link: 'https://drive.google.com/file/d/11CpiHoOzCkvRp_-PViaKvOlLSv0LE8LZ/view' },
-    { nome: 'Apostila Câmara Fria', link: 'COLOQUE_SEU_LINK_DO_GOOGLE_DRIVE_AQUI'},
-    { nome: 'Códigos de Erro - Midea', link: 'COLOQUE_SEU_LINK_DO_GOOGLE_DRIVE_AQUI'}
+    { nome: 'Apostila Câmara Fria', link: 'https://docs.google.com/document/d/1q_aZ7O87U0O5fNtWwlEX0E2MrESOlkH0/edit?usp=drive_link&ouid=116250304533082516177&rtpof=true&sd=true'},
+    { nome: 'Códigos de Erro - Midea', link: 'https://drive.google.com/file/d/1caEATNjJQgmY_8bJcfOD58-uNVvU2Bq-/view?usp=drive_link'}
 ];
 
 // NOME DO COMPONENTE CORRIGIDO

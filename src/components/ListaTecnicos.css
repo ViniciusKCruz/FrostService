@@ -1,133 +1,131 @@
+/* Estilos Gerais */
 .tecnicos-page-container {
-  background-color: #eff5ff;
+  padding: 40px 20px; /* Espaçamento no fundo azul */
   min-height: 100vh;
-  font-family: 'Poppins', sans-serif; /* Uma fonte moderna sans-serif */
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
 
-  /* --- ADIÇÕES PARA CENTRALIZAR --- */
-  max-width: 700px; /* Define uma largura máxima para o conteúdo */
-  margin: auto;   /* Centraliza o container na tela (0 para cima/baixo, auto para esq/dir) */
-  
-  /* Opcional: uma sombra suave para dar um efeito de "página" em telas grandes */
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05); 
+/* O wrapper centralizado com fundo branco */
+.tecnicos-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff; /* Fundo branco para o conteúdo */
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .tecnicos-header {
-  padding: 20px;
-  text-align: center;
-  position: relative;
-}
-
-.tecnicos-header h1 {
-  font-size: 1.5rem;
-  color: #0d2a57;
-  font-weight: 600;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
 }
 
 .back-button {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #0d2a57;
-}
-
-.tecnicos-content {
-  padding: 0 20px 20px 20px;
-}
-
-/* Seção de especialistas em destaque */
-.featured-section h2, .list-section h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.featured-scroller {
-  display: flex;
-  gap: 25px;
-  overflow-x: auto;
-  padding-bottom: 20px; /* Espaço para a barra de rolagem não cobrir o conteúdo */
-  /* Esconde a barra de rolagem visualmente mas mantém a funcionalidade */
-  scrollbar-width: none; /* Firefox */
-}
-.featured-scroller::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
-}
-
-
-.featured-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Isso centraliza horizontalmente os itens */
-  text-align: center;  /* <-- ADICIONADO: Centraliza o texto (o nome) */
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.featured-card img {
-  width: 70px;
-  height: 70px;
+  background: #f4f7ff; /* Fundo azul do body */
+  border: 1px solid #ddd;
   border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.featured-card span {
-  font-weight: 500;
-  color: #333;
-}
-
-/* Seção da lista principal */
-.list-section {
-  margin-top: 30px;
-}
-
-.tecnicos-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.tecnico-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background-color: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-.tecnico-initial {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: white;
+  cursor: pointer;
+  color: #333;
   flex-shrink: 0;
 }
 
-.tecnico-info {
+.tecnicos-header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #3b4a6e;
+  margin: 0;
+}
+
+main.tecnicos-content {
+  padding: 0;
+}
+
+/* ====================================================== */
+/* GRELHA DE TÉCNICOS (Antiga featured-section) */
+/* ====================================================== */
+.tecnico-grid-section {
+  padding-top: 10px;
+}
+
+/* A grelha responsiva */
+.tecnico-grid {
+  display: grid;
+  /* Cria colunas automáticas de no mínimo 100px */
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 30px; /* Espaçamento entre as "bolinhas" */
+  justify-content: center;
+}
+
+/* Estilo do card de perfil (a "bolinha") */
+.tecnico-perfil-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.tecnico-name {
-  font-weight: 600;
+.tecnico-perfil-card:hover {
+  transform: scale(1.05); /* Efeito de zoom */
+}
+
+.tecnico-perfil-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tecnico-perfil-card span {
+  font-weight: 500;
   color: #333;
+  font-size: 0.9rem;
 }
 
-.tecnico-phone {
-  font-size: 0.9rem;
-  color: #777;
+/* ====================================================== */
+/* ESTILOS DA LISTA DE TEXTO (REMOVIDOS) */
+/* ====================================================== */
+/* As classes .list-section, .tecnicos-list, .tecnico-item, 
+   .tecnico-initial, .tecnico-info, .tecnico-name, 
+   .tecnico-phone foram removidas. */
+
+/* ============================================= */
+/* RESPONSIVIDADE (Mantida) */
+/* ============================================= */
+@media (max-width: 768px) {
+  .tecnicos-page-container {
+    padding: 20px 15px;
+  }
+  
+  .tecnicos-content-wrapper {
+    padding: 20px;
+  }
+
+  .tecnicos-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .tecnico-grid {
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+
+  .tecnico-perfil-card img {
+    width: 70px;
+    height: 70px;
+  }
 }

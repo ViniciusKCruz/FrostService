@@ -1,17 +1,27 @@
-import React from 'react';
+/* Em src/components/PerfilTecnicoModal.js */
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 import './PerfilTecnicoModal.css';
-import { IoChevronForward } from 'react-icons/io5';
+import { IoChevronForward, IoChevronDown, IoCall, IoMail, IoShieldCheckmark } from 'react-icons/io5';
 
 Modal.setAppElement('#root');
 
 const PerfilTecnicoModal = ({ isOpen, onRequestClose, tecnico, onEscolher }) => {
-  if (!tecnico) return null; // Não renderiza nada se não houver um técnico selecionado
+  const [showServicos, setShowServicos] = useState(false);
+  const [showCertificados, setShowCertificados] = useState(false);
+
+  if (!tecnico) return null; 
+
+  const handleClose = () => {
+    setShowServicos(false);
+    setShowCertificados(false);
+    onRequestClose();
+  };
 
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={onRequestClose}
+      onRequestClose={handleClose}
       className="perfil-modal"
       overlayClassName="perfil-overlay"
       contentLabel="Perfil do Técnico"
@@ -20,24 +30,63 @@ const PerfilTecnicoModal = ({ isOpen, onRequestClose, tecnico, onEscolher }) => 
         <h2 className="perfil-title">Perfil</h2>
         <img src={tecnico.profilePicUrl} alt={tecnico.nome} className="perfil-pic" />
         <h3 className="perfil-name">{tecnico.nome}</h3>
-        <p className="perfil-email">{tecnico.email}</p>
+        
+        <div className="perfil-contato-info">
+          <div className="contato-item">
+            <IoMail size={16} /> <span>{tecnico.email}</span>
+          </div>
+          <div className="contato-item">
+            <IoCall size={16} /> <span>{tecnico.telefone}</span>
+          </div>
+          <div className="contato-item">
+            <IoShieldCheckmark size={16} /> <span>{tecnico.cft}</span>
+          </div>
+        </div>
 
         <div className="perfil-info-section">
-          <h4>Saiba um pouco mais:</h4>
-          <div className="info-card">
+          
+          <div className="info-card" onClick={() => setShowServicos(!showServicos)}>
             <div className="info-card-text">
-              <h5>Formação acadêmica</h5>
-              <p>Saiba um pouco sobre a formação do nosso colaborador {tecnico.nome.split(' ')[0]}</p>
+              <h5>Serviços Prestados</h5>
+              <p>Veja os principais serviços deste técnico</p>
             </div>
-            <IoChevronForward size={24} className="info-card-icon" />
+            {showServicos ? <IoChevronDown size={24} className="info-card-icon" /> : <IoChevronForward size={24} className="info-card-icon" />}
           </div>
-          <div className="info-card">
+          {showServicos && (
+            <div className="info-card-content">
+              <ul>
+                {tecnico.servicos && tecnico.servicos.length > 0 ? (
+                  tecnico.servicos.map((servico, index) => (
+                    <li key={index}>{servico}</li>
+                  ))
+                ) : (
+                  <li>Nenhum serviço listado.</li>
+                )}
+              </ul>
+            </div>
+          )}
+
+          <div className="info-card" onClick={() => setShowCertificados(!showCertificados)}>
             <div className="info-card-text">
               <h5>Certificados</h5>
-              <p>Veja alguns dos certificados do nosso colaborador {tecnico.nome.split(' ')[0]}</p>
+              <p>Veja os certificados deste colaborador</p>
             </div>
-            <IoChevronForward size={24} className="info-card-icon" />
+            {showCertificados ? <IoChevronDown size={24} className="info-card-icon" /> : <IoChevronForward size={24} className="info-card-icon" />}
           </div>
+          {showCertificados && (
+            <div className="info-card-content">
+              <ul>
+                {tecnico.certificados && tecnico.certificados.length > 0 ? (
+                  tecnico.certificados.map((cert, index) => (
+                    <li key={index}>{cert}</li>
+                  ))
+                ) : (
+                  <li>Nenhum certificado listado.</li>
+                )}
+              </ul>
+            </div>
+          )}
+          
         </div>
 
         <button className="escolher-tecnico-btn" onClick={onEscolher}>

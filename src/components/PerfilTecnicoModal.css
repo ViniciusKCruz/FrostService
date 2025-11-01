@@ -9,28 +9,37 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  padding: 20px;
 }
 
 .perfil-modal {
-  background: #f4f7ff;
+  background: #fff;
   border-radius: 20px;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  padding: 30px;
+  max-width: 450px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
   outline: none;
   font-family: 'Poppins', sans-serif;
+  /* Remove scrollbar feia no webkit */
+  scrollbar-width: none; /* Firefox */
+}
+.perfil-modal::-webkit-scrollbar {
+  display: none; /* Safari e Chrome */
 }
 
+
 .perfil-container {
+  padding: 30px;
   text-align: center;
 }
 
 .perfil-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  color: #0d2a57;
-  margin-bottom: 20px;
+  color: #333;
+  margin: 0 0 15px 0;
 }
 
 .perfil-pic {
@@ -38,79 +47,127 @@
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  margin-bottom: 15px;
+  border: 4px solid #f0f0f0;
+  margin-bottom: 10px;
 }
 
 .perfil-name {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  color: #333;
+  color: #3b4a6e;
   margin: 0;
 }
 
-.perfil-email {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 30px;
+/* ====================================================== */
+/* NOVA SEÇÃO DE INFORMAÇÕES DE CONTATO                   */
+/* ====================================================== */
+.perfil-contato-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 15px 0;
+  /* Centraliza o bloco de texto */
+  align-items: center;
 }
 
-.perfil-info-section h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333;
+.contato-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.contato-item svg {
+  color: #4a90e2;
+  flex-shrink: 0;
+}
+
+/* ====================================================== */
+/* SEÇÃO DE INFORMAÇÕES EXPANSÍVEIS                       */
+/* ====================================================== */
+.perfil-info-section {
+  margin-top: 25px;
   text-align: left;
-  margin-bottom: 15px;
 }
 
 .info-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
-  border: 1px solid #e0e7ff;
+  background-color: #f8f9fa;
   border-radius: 12px;
   padding: 15px;
-  margin-bottom: 15px;
-  text-align: left;
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  transition: background-color 0.2s;
+  margin-bottom: 10px;
 }
 
 .info-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #f1f3f5;
 }
 
 .info-card-text h5 {
-  margin: 0 0 5px 0;
-  font-size: 0.9rem;
+  margin: 0 0 4px 0;
+  font-size: 1rem;
   font-weight: 600;
   color: #333;
 }
 
 .info-card-text p {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #777;
 }
 
 .info-card-icon {
-  color: #a0a0a0;
+  color: #4a90e2;
+  flex-shrink: 0;
 }
 
+/* Estilo para o conteúdo expansível (a lista) */
+.info-card-content {
+  padding: 10px 15px 15px 15px;
+  background: #fdfdfd;
+  border: 1px solid #f0f0f0;
+  border-radius: 0 0 12px 12px;
+  margin-top: -10px; /* Gruda no card de cima */
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.info-card-content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.info-card-content li {
+  font-size: 0.9rem;
+  color: #555;
+  padding: 8px 5px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-card-content li:last-child {
+  border-bottom: none;
+}
+
+
+/* Botão de Escolher */
 .escolher-tecnico-btn {
-  width: 100%;
-  padding: 16px;
   background-color: #4a90e2;
   color: white;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
+  padding: 14px;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
+  width: 100%;
   margin-top: 20px;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
 }
 
 .escolher-tecnico-btn:hover {
