@@ -7,65 +7,82 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.login-container .login-logo,
-.login-cliente-container .login-logo,
-.login-tecnico-container .login-logo {
-  width: 280px !important;   /* << AJUSTE ESTE VALOR para o tamanho que desejar */
-  max-width: 70% !important; /* Segurança para telas muito pequenas */
-  height: auto;              /* Mantém a proporção da imagem */
-  margin-bottom: 2rem;     /* Espaçamento abaixo da logo */
-}
-
-/* Estilo do título "LOGIN" */
-.login-title {
-  font-size: 3rem;  /* Tamanho grande */
-  font-weight: 900; /* Fonte bem grossa (bold) */
-  color: #1a1a1a;   /* Cor preta/cinza escuro */
-  margin-bottom: 2.5rem; /* Espaço entre o título e os botões */
-  letter-spacing: 1.5px; /* Leve espaçamento entre as letras */
-}
-
-/* Container para agrupar os botões */
-.button-group {
+/* ====================================================== */
+/* ESTILOS DA SUA HOMEPAGE (JÁ EXISTENTES)                */
+/* ====================================================== */
+.login-container {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem; /* Espaçamento entre os botões */
+  justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-color: #f4f7ff;
+  font-family: 'Inter', sans-serif;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-/* Estilo principal dos botões de login */
-.login-button {
-  background-color: #718ef3; /* Cor azul dos botões */
-  color: white;
-  border: none;
-  padding: 16px 24px;
-  border-radius: 12px; /* Bordas arredondadas */
-  font-size: 1rem;
-  font-weight: 600; /* Fonte semi-bold */
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  transition: all 0.3s ease; /* Transição suave para efeitos */
-  width: 320px; /* Largura fixa para todos os botões */
+.login-logo {
+  width: 150px;
+  margin-bottom: 2rem;
+}
+
+.login-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1.5px;
   text-align: center;
 }
 
-/* Efeito ao passar o mouse por cima do botão */
-.login-button:hover {
-  transform: translateY(-3px); /* Levanta o botão levemente */
-  box-shadow: 0 8px 20px rgba(113, 142, 243, 0.4); /* Aumenta a sombra e dá cor */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  /* Esta é a alteração principal: 
+    O grupo de botões terá 100% de largura, mas no máximo 320px.
+  */
+  width: 100%;
+  max-width: 320px; 
 }
 
-/* Efeito ao clicar no botão */
+.login-button {
+  background-color: #718ef3;
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  
+  /* Esta é a alteração principal: 
+    O botão agora ocupa 100% do seu 'pai' (.button-group)
+  */
+  width: 100%; 
+  box-sizing: border-box; /* Garante que o padding não quebre o layout */
+  text-align: center;
+}
+
+.login-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(113, 142, 243, 0.4);
+}
+
 .login-button:active {
   transform: translateY(0);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para o link de cadastro */
 .signup-link {
   margin-top: 2.5rem;
   font-size: 0.9rem;
   color: #555;
+  text-align: center;
 }
 
 .signup-link a {
@@ -77,4 +94,38 @@ body {
 
 .signup-link a:hover {
   text-decoration: underline;
+}
+
+/* =============================================================== */
+/* ============= REGRAS DE RESPONSIVIDADE PARA TELEMÓVEL ============= */
+/* =============================================================== */
+
+/* Estes estilos aplicam-se a ecrãs com 640px de largura ou menos */
+@media (max-width: 640px) {
+  
+  .login-container {
+    padding: 2rem; /* Mais espaço nas laterais */
+  }
+
+  .login-logo {
+    width: 120px;
+    margin-bottom: 1.5rem;
+  }
+
+  .login-title {
+    font-size: 2.2rem; /* Título mais pequeno */
+    margin-bottom: 2rem;
+  }
+  
+  /* O .button-group e .login-button já estão a 100% width, 
+     o que é perfeito para telemóveis. */
+     
+  .login-button {
+    font-size: 0.9rem;
+    padding: 14px 20px;
+  }
+  
+  .signup-link {
+     font-size: 0.8rem;
+  }
 }
