@@ -1,114 +1,116 @@
+/* Container Principal */
 .form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #f0f2f5; /* Fundo cinza claro */
-  padding: 40px 20px; /* Espaçamento geral */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-/* --- CABEÇALHO (FORA DO CARD) --- */
-.form-header {
-  text-align: center;
-  margin-bottom: 25px;
   width: 100%;
-  max-width: 450px;
-}
-
-.form-title {
-  font-size: 1.75rem; /* 28px */
-  font-weight: 600;
-  color: #333;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.form-subtitle {
-  font-size: 1rem; /* 16px */
-  color: #666;
-  margin-top: 8px;
-  border-bottom: 1px solid #ddd; /* Linha fina abaixo do subtítulo */
-  padding-bottom: 15px;
-}
-
-/* --- O CARD BRANCO DO FORMULÁRIO --- */
-.form-body {
-  width: 100%;
-  max-width: 450px;
-  background-color: white;
-  padding: 40px; /* Mais preenchimento interno */
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 500px; /* Largura padrão para o formulário */
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Centraliza na tela */
+  font-family: 'Poppins', sans-serif;
+  position: relative;
   box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
-/* --- GRUPO DE LABEL + INPUT --- */
-.input-group {
-  margin-bottom: 25px;
+/* Ajuste para quando estiver a mostrar os planos (precisa ser mais largo) */
+.form-container.plans-mode {
+  max-width: 900px;
 }
 
-.input-group:last-of-type {
-  margin-bottom: 30px; /* Mais espaço antes do botão */
+/* Cabeçalho */
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.back-step-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #3b4a6e;
+  margin: 0 0 10px 0;
+}
+
+.form-subtitle {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Formulário */
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .input-group label {
-  display: block;
-  font-size: 0.75rem; /* 12px */
-  font-weight: 600;
-  color: #555;
-  margin-bottom: 8px;
-  text-transform: uppercase; /* Deixa as labels em maiúsculas */
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #333;
   letter-spacing: 0.5px;
 }
 
 .input-group input {
-  width: 100%;
-  padding: 14px 16px;
-  background-color: #f0f2f5; /* Cor de fundo do input igual ao do container */
-  border: 1px solid #dde1e7;
-  border-radius: 6px;
-  font-size: 1rem; /* 16px */
-  color: #333;
-  box-sizing: border-box;
-}
-
-.input-group input::placeholder {
-  color: #99a9c4;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s;
+  width: 100%; /* Garante que o input ocupe a largura disponível */
+  box-sizing: border-box; /* Previne overflow */
 }
 
 .input-group input:focus {
   outline: none;
-  border-color: #4a90e2; /* Borda azul ao focar */
+  border-color: #4a90e2;
   background-color: #fff;
 }
 
-/* --- BOTÃO DE CADASTRO --- */
 .form-submit-button {
-  width: 100%;
-  padding: 16px;
-  background-color: #4a90e2; /* Tom de azul do design */
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #4a90e2;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 700;
-  text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
+  width: 100%;
 }
 
 .form-submit-button:hover {
   background-color: #357abd;
 }
 
-/* --- LINK INFERIOR (FORA DO CARD) --- */
 .form-footer-link {
-  margin-top: 25px;
+  text-align: center;
+  margin-top: 20px;
   font-size: 0.9rem;
-  color: #555;
+  color: #666;
 }
 
 .form-footer-link a {
@@ -117,6 +119,162 @@
   text-decoration: none;
 }
 
-.form-footer-link a:hover {
-  text-decoration: underline;
+/* ========================= */
+/* ESTILOS DOS PLANOS (MINI) */
+/* ========================= */
+.planos-grid-mini {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.plano-card-mini {
+  background-color: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.plano-card-mini:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.plano-card-mini.destaque {
+  border: 2px solid #4a90e2;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.15);
+  /* No mobile, queremos que o destaque apareça bem, mas sem quebrar */
+  margin-top: 0; 
+}
+
+.badge-popular {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4a90e2;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 10px;
+  white-space: nowrap; /* Impede que o texto quebre */
+}
+
+.plano-header h3 {
+  margin: 0;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.preco {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #3b4a6e;
+  margin: 10px 0;
+}
+
+.preco small {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #888;
+}
+
+.plano-features {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.plano-features li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-check {
+  color: #28a745;
+  flex-shrink: 0;
+}
+
+.plano-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #4a90e2;
+  border-radius: 8px;
+  background: transparent;
+  color: #4a90e2;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.plano-btn:hover {
+  background-color: #edf5ff;
+}
+
+.plano-btn.destaque-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+}
+
+.plano-btn.destaque-btn:hover {
+  background-color: #357abd;
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE PARA TELEMÓVEIS (Max 768px)    */
+/* ============================================= */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 25px 20px; /* Reduz o padding lateral e vertical */
+    max-width: 100%; /* Ocupa a largura total disponível */
+    border-radius: 15px;
+    margin: 10px; /* Pequena margem para não colar nas bordas da tela */
+  }
+
+  .form-container.plans-mode {
+    padding: 20px;
+  }
+
+  .planos-grid-mini {
+    /* Força uma coluna única para os planos em telas pequenas */
+    grid-template-columns: 1fr; 
+    gap: 25px; /* Aumenta o espaço entre os cartões empilhados */
+  }
+
+  .form-title {
+    font-size: 1.3rem; /* Reduz o tamanho do título */
+  }
+
+  .form-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .back-step-btn {
+    position: static; /* Remove posicionamento absoluto */
+    margin-bottom: 25px; /* Aumentado de 15px para 25px para dar mais espaço */
+    justify-content: center; /* Centraliza o botão */
+    width: 100%;
+  }
+  
+  /* Ajuste para garantir que o botão de voltar não fique em cima do título */
+  .form-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adicionado gap extra para separar elementos dentro do header */
+  }
+  
+  /* Reordena para o botão de voltar aparecer primeiro se necessário, 
+     ou ajusta o fluxo */
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-// O ícone IoSchool (educação/recursos) foi reimportado
+// O ícone IoCard foi removido pois o botão de planos saiu daqui
 import { IoArrowBack, IoSchool, IoPeople } from 'react-icons/io5';
 import './DashboardEmpresa.css';
 
@@ -17,15 +17,18 @@ function DashboardEmpresa() {
         <h1>Painel da Empresa</h1>
         <div/>
       </header>
-
+      
       <section className="dashboard-section">
         <h2>Ferramentas e Gestão</h2>
         <div className="ferramentas-grid">
+          
+          {/* O LINK DE PLANOS FOI REMOVIDO DAQUI */}
+
           <Link to="/empresa/cadastro-tecnicos" className="ferramenta-card">
             <IoPeople size={32} />
             <span>Cadastro de Técnicos</span>
           </Link>
-          {/* TEXTO, ÍCONE E LINK CORRIGIDOS */}
+          
           <Link to="/empresa/recursos" className="ferramenta-card">
             <IoSchool size={32} />
             <span>Recursos Técnicos</span>

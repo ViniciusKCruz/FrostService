@@ -1,0 +1,131 @@
+.planos-container {
+    padding: 40px 20px;
+    min-height: 100vh;
+    background-color: #f4f7ff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.planos-header {
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.planos-header h1 {
+    font-size: 2rem;
+    color: #3b4a6e;
+    margin: 0;
+}
+
+.planos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center; /* Alinha verticalmente para destacar o do meio */
+}
+
+.plano-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+    transition: transform 0.3s;
+    border: 1px solid #eee;
+}
+
+.plano-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Estilos Específicos para o Destaque */
+.plano-card.destaque {
+    border: 2px solid #4a90e2;
+    padding: 40px 30px; /* Um pouco maior */
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.15);
+    z-index: 1;
+}
+
+.badge-popular {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4a90e2;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.plano-header h3 {
+    color: #555;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.preco {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #3b4a6e;
+    margin: 15px 0;
+}
+
+.preco small {
+    font-size: 1rem;
+    color: #999;
+    font-weight: 400;
+}
+
+.plano-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 30px 0;
+    text-align: left;
+}
+
+.plano-features li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f9f9f9;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon.check {
+    color: #28a745;
+    flex-shrink: 0;
+}
+
+.plano-btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #4a90e2;
+    background: transparent;
+    color: #4a90e2;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.plano-btn:hover {
+    background: #eff6ff;
+}
+
+.plano-btn.destaque-btn {
+    background: #4a90e2;
+    color: white;
+}
+
+.plano-btn.destaque-btn:hover {
+    background: #357abd;
+}

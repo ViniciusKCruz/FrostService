@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IoArrowBack, IoNotifications } from 'react-icons/io5';
+// Adicionei o ícone IoStar
+import { IoArrowBack, IoNotifications, IoStar } from 'react-icons/io5';
 import './SolicitarServico.css';
 import NotificacoesModal from '../components/NotificacoesModal';
 
@@ -9,7 +10,6 @@ function SolicitarServico() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleServiceSelection = (path) => {
-    console.log(`Navegando para: ${path}`);
     navigate(path);
   };
 
@@ -21,15 +21,26 @@ function SolicitarServico() {
             <IoArrowBack size={24} />
           </button>
           <h1 className="servico-title-visual">Solicitar Serviço</h1>
-          <button onClick={() => setIsModalOpen(true)} className="header-icon-button notificacoes-button">
-            <IoNotifications size={24} />
-          </button>
+          
+          <div className="header-actions">
+            {/* BOTÃO NOVO PARA AVALIAÇÃO */}
+            <button 
+                onClick={() => navigate('/cliente/avaliar')} 
+                className="header-icon-button"
+                title="Avaliar Serviços"
+            >
+                <IoStar size={24} color="#f5a623" />
+            </button>
+
+            <button onClick={() => setIsModalOpen(true)} className="header-icon-button notificacoes-button">
+              <IoNotifications size={24} />
+            </button>
+          </div>
         </header>
 
         <main className="servico-main-grid">
-          {/* Card: Refrigeração Residencial */}
+          {/* Cards de Serviço (Mantidos iguais) */}
           <div className="servico-card-visual" onClick={() => handleServiceSelection('/tecnicos/refrigeracao')}>
-            {/* Caminho da imagem atualizado para geladeira.jpg */}
             <img src="/images/geladeira.jpg" alt="Refrigeração Residencial" />
             <div className="card-info">
               <h3>Refrigeração Residencial</h3>
@@ -37,9 +48,7 @@ function SolicitarServico() {
             </div>
           </div>
 
-          {/* Card: Refrigeração Comercial */}
           <div className="servico-card-visual" onClick={() => handleServiceSelection('/tecnicos/refrigeracao')}>
-            {/* Caminho da imagem atualizado para balcao-frio.jpg */}
             <img src="/images/balcao-frio.jpg" alt="Refrigeração Comercial" />
             <div className="card-info">
               <h3>Refrigeração Comercial</h3>
@@ -47,9 +56,7 @@ function SolicitarServico() {
             </div>
           </div>
 
-          {/* Card: Refrigeração Industrial */}
           <div className="servico-card-visual" onClick={() => handleServiceSelection('/tecnicos/refrigeracao-industrial')}>
-            {/* Caminho da imagem atualizado para chiller-grande-porte.jpg */}
             <img src="/images/chiller-grande-porte.jpg" alt="Refrigeração Industrial" />
             <div className="card-info">
               <h3>Refrigeração Industrial</h3>
@@ -57,9 +64,7 @@ function SolicitarServico() {
             </div>
           </div>
 
-          {/* Card: Climatização Residencial */}
           <div className="servico-card-visual" onClick={() => handleServiceSelection('/tecnicos/climatizacao')}>
-            {/* Caminho da imagem atualizado para arcondicionado.jpg */}
             <img src="/images/arcondicionado.jpg" alt="Climatização Residencial" />
             <div className="card-info">
               <h3>Climatização Residencial</h3>
@@ -67,9 +72,7 @@ function SolicitarServico() {
             </div>
           </div>
 
-          {/* Card: Climatização Comercial */}
           <div className="servico-card-visual" onClick={() => handleServiceSelection('/tecnicos/climatizacao')}>
-            {/* Caminho da imagem atualizado para sistema-vrf.jpg */}
             <img src="/images/sistema-vrf.jpg" alt="Climatização Comercial" />
             <div className="card-info">
               <h3>Climatização Comercial</h3>
